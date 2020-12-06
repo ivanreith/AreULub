@@ -1,0 +1,46 @@
+﻿@model List<ServiceModel>
+@{
+    ViewData["Title"] = "Services & Products";
+}
+
+<div class="text-center">
+    <h1>Services page</h1>
+    <h4><a href="Tax">Calculate how much your taxes would be!</a> </h4>
+</div>
+<!--  Starting table stuff -->
+
+<a asp-controller="Services" asp-action="Add">Add Service</a>
+<table class="table table-bordered table-striped" style="background-color:sandybrown;">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Estimated duration</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.ServiceName</td>
+                    <td>@product.ServiceDescription</td>
+                    <td>@product.ServiceEstimated</td>
+                    <td>@product.ServicePrice</td>
+                    <td>
+                        <a asp-controller="Services" asp-action="Edit"
+                           asp-route-id="@product.ServiceID"
+                           asp-route-slug="@product.Slug">Edit</a>
+                        <a asp-controller="Services" asp-action="Delete"
+                           asp-route-id="@product.ServiceID"
+                           asp-route-slug="@product.Slug">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<!--  Ending table stuff -->

@@ -1,0 +1,86 @@
+﻿@model QuickReview
+@{
+    ViewData["Title"] = "Feed Back";
+}
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+    <h3>Here we appreciate your feed backs!</h3>
+    <h3><a href="LeaveComment">If you have the time to leave a comment, thanks!</a></h3>
+    <figure class="figure">
+        <img src="~/Images/02pexels-andrea-piacquadio-3807450.jpg" class="figure-img img-fluid rounded" alt="...">
+        <figcaption class="figure-caption">Let us know how we did</figcaption>
+    </figure>
+    <h3>Grade your experience with us using the quick answer questionary!</h3>
+    <!--  here is the quick review-->
+    <div class="container" style="background-color:lightsalmon">
+        <form method="post" class="form-group p-lg-4 p-md-4 p-0 p-sm-4 " >
+            <div asp-validation-summary="All"></div>
+            <div class="row">
+                <label class="control-label col-3 col-sm-6 col-md-4 col-lg-12" asp-for="UserQuesting">Your name</label>
+                <input class="form-control col-sm-10 bg-light text-info" asp-for="UserQuesting" />
+            </div>
+            <div class="row" style="background-color:lightsalmon">
+                
+                    <div col="1"><p> <<<  >>>  </p></div>
+                    <div col="3">
+                        <h6>How was our service??    </h6>
+                        <input asp-for="Quest1" type="radio" name="Quest1" value="3">
+                        <label asp-for="Quest1" for="male">excellent</label><br>
+                        <input asp-for="Quest1" type="radio" name="Quest1" value="2">
+                        <label asp-for="Quest1" for="female">adequate</label><br>
+                        <input asp-for="Quest1" type="radio" name="Quest1" value="1">
+                        <label asp-for="Quest1" for="other">wrong </label>
+                    </div>
+                    <div col="1"><p> <<<  >>>  </p></div>
+                    <div col="3">
+                        <h6>How was our price??      </h6>
+                        <input asp-for="Quest2" type="radio" name="Quest2" value="3">
+                        <label asp-for="Quest2" for="male">Very cheap</label><br>
+                        <input asp-for="Quest2" type="radio" name="Quest2" value="2">
+                        <label asp-for="Quest2" for="female">Just right</label><br>
+                        <input asp-for="Quest2" type="radio" name="Quest2" value="1">
+                        <label asp-for="Quest2" for="other">Expensive</label>
+                    </div>
+                    <div col="1"><p> <<<  >>>  </p></div>
+                    <div col="3">
+                        <h6>How fas it was??    </h6>
+                        <input asp-for="Quest3" type="radio" name="Quest3" value="3">
+                        <label asp-for="Quest3" for="male">Very fast</label><br>
+                        <input asp-for="Quest3" type="radio" name="Quest3" value="2">
+                        <label asp-for="Quest3" for="female">Just right</label><br>
+                        <input asp-for="Quest3" type="radio" name="Quest3" value="1">
+                        <label asp-for="Quest3" for="other">Very slow</label>
+                    </div>
+               
+            </div>
+            <div class="jumbotron-fluid  p-3">
+                <div class="row">
+                    <button type="submit" class="btn btn-success" value="submit">Submit</button>
+                    <button type="reset" class="btn btn-warning">Not now...</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="container-fluid bg-light text- ">
+        @if (Model != null)
+        {
+            <h2> YOUR REVIEW:</h2>
+            <p>
+                <h6>Thanks for your time:  </h6>
+                @Model.UserQuesting<br />
+                <h6>Your total points are:</h6>
+                @Model.CheckQuiz(Model)<br />
+                <span> @Model.Quest2AnswerRight</span><br />
+            </p>}
+    </div>
+
+    <!-- here ends the quick review-->
+
+</div>
+
+
+
+

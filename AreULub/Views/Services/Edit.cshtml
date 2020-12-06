@@ -1,0 +1,51 @@
+﻿@model ServiceModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@{
+    string title = ViewBag.Action + " Service";
+    ViewBag.Title = title;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="Edit" method="post" style="background-color:khaki;">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="ServiceName">Name</label>
+        <input asp-for="ServiceName" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ServiceDescription">Description</label>
+        <input asp-for="ServiceDescription" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="ServiceEstimated">Duration aprox.</label>
+        <input asp-for="ServiceEstimated" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="ServicePrice">Price (subject to change )</label>
+        <input asp-for="ServicePrice" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="User">User</label>
+        <select asp-for="User" class="form-control">
+            <option value="">select a User</option>
+            @foreach (User g in ViewBag.Posters)
+            {
+                <option value="@g.UserLast">@g.UserName</option>
+            }
+        </select>
+    </div>
+
+
+
+    <input type="hidden" asp-for="ServiceID" />
+
+    <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
+    <a asp-controller="Services" asp-action="ServicesIndex"
+       class="btn btn-primary">Cancel</a>
+</form>

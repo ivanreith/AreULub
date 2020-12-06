@@ -1,0 +1,22 @@
+﻿@model ServiceModel 
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@{
+    string title = ViewBag.Action + " Service";
+    ViewBag.Title = title;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h2>Confirm Deletion</h2>
+<h3>@Model.ServiceName (@Model.ServiceDescription)</h3>
+
+<form asp-action="Delete" method="post" style="background-color:lavenderblush;">
+    <input type="hidden" asp-for="ServiceID" />
+
+    <button type="submit" class="btn btn-primary">Delete</button>
+    <a asp-controller="Services" asp-action="ServicesIndex"
+       class="btn btn-primary">Cancel</a>
+</form>

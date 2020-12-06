@@ -1,0 +1,69 @@
+﻿@model CommentsModel
+@{
+    ViewData["Title"] = "Comments";
+}
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+</head>
+<body>
+    <div class="text-info text-center">
+        <h1>Leave a comment, improvement or suggestion !</h1>
+        <h3>We take seriously our costumer's opinion</h3>
+
+    </div>
+    <span class="col-4"></span>
+    <h1 class="container-fluid align-content-center col-4"> @ViewData["Title"] </h1>
+    <div class="container">     
+        <form method="post" class="form-group p-lg-4 p-md-4 p-0 p-sm-4 bg-light">
+            <div asp-validation-summary="All"></div>
+            <div class="row">
+                <label class="control-label col-3 col-sm-6 col-md-4 col-lg-12" asp-for="CommentsUser">Your Name</label>
+                <input class="form-control col-sm-10 bg-light text-info" asp-for="CommentsUser" />
+            </div>
+            <div class="row">
+                <label class="control-label col-3 col-sm-6 col-md-4 col-lg-12" asp-for="CommentTitle">The title</label>
+                <input class="form-control col-sm-10 bg-light text-info" asp-for="CommentTitle" />
+            </div>
+            <div class="row">
+                <label class="control-label col-3 col-sm-6 col-md-4 col-lg-12" asp-for="CommentText">Your Comment</label>
+                <input class="form-control col-sm-10 bg-light text-info" asp-for="CommentText" />
+
+            </div>        
+    <div class="row">
+        <label class="control-label col-3 col-sm-6 col-md-4 col-lg-12" asp-for="CommentDate">When was that?</label>
+        <input class="form-control col-sm-10 bg-light text-info" type="date" asp-for="CommentDate" />
+    </div>
+      
+            <div class="jumbotron-fluid bg-light p-3">
+                <div class="row">
+                    <button type="submit" class="btn btn-success" value="submit">Submit</button>
+                    <button type="reset" class="btn btn-warning">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <br />
+    <br />
+
+    <div class="container-fluid bg-warning text-danger ">
+        @if (Model != null)
+        {
+            <h2> YOUR COMMENTS   .</h2>
+            <p>
+                <h6>Who?</h6>
+                @Model.CommentsUser<br />
+                <h6>Title:</h6>
+                @Model.CommentTitle<br />
+                <h6>What:</h6>
+                @Model.CommentText<br />
+               
+                <h6>When This was posted? :</h6>
+                @Model.CommentDate<br />
+
+            </p>}
+    </div>
+</body>
+</html>

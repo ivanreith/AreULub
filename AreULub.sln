@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AreULub", "AreULub\AreULub.csproj", "{BF4C3DE9-D6BF-4EEA-BBFF-DE326F69E858}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AreULubTests", "AreULubTests\AreULubTests.csproj", "{EF273E84-0EE1-4535-B8BB-FF4EDC4420FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF4C3DE9-D6BF-4EEA-BBFF-DE326F69E858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF4C3DE9-D6BF-4EEA-BBFF-DE326F69E858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF4C3DE9-D6BF-4EEA-BBFF-DE326F69E858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF4C3DE9-D6BF-4EEA-BBFF-DE326F69E858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF273E84-0EE1-4535-B8BB-FF4EDC4420FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF273E84-0EE1-4535-B8BB-FF4EDC4420FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF273E84-0EE1-4535-B8BB-FF4EDC4420FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF273E84-0EE1-4535-B8BB-FF4EDC4420FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40367528-F2B4-40E8-AAB2-0FC5DC1EE790}
+	EndGlobalSection
+EndGlobal
