@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAVn+Quj5hvkyHP3rpd5S5aAAAAAACAAAAAAAQZgAAAAEAACAAAAA5Vw6ywgSsMghjZoFHH0iqkEqkxt2pnqFYLAdf3FH6xgAAAAAOgAAAAAIAACAAAABWtPV2qI3vT6qxCFqAU6nYWuG+Pq8pJot3Lk9K/CA/fIAAAAD5jBIwH/PxsF+2QuOH1MMBQ3moH1xKmHNtrzpBeM4KQym7D/kQyUe6hpo+bdHcaPK8DzF3NBLMYdDORwpLx1NbeFEuZ30tbpGmL/4HCFSkUpNpvrtvOaE7TSe9hELe8JC/rGoxzFhJDmgygT/KasWPEsy3xWzfCMN3KLapRGhOCUAAAADIDU5Gl+ZQ0xipvAFmZHO05djss3/7W/Cyrty64sKbzGSb9piiSwasPA62McEeLHi0VrlCTOyKXbMTn5vdVyOO</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="ServicesContext">
+      <Value>Data Source=tcp:ivancastronuno.database.windows.net,1433%3bInitial Catalog=AreULub%3bUser Id=root2%40ivancastronuno%3bPassword=ivan2733%40</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="AreULub.Models.ServiceContext">
+      <Value>Data Source=tcp:ivancastronuno.database.windows.net,1433%3bInitial Catalog=AreULub%3bUser Id=root2%40ivancastronuno%3bPassword=ivan2733%40</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

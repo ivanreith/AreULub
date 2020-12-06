@@ -18,12 +18,12 @@
             <div asp-validation-summary="All"></div>
             <div class="row">
                 <label class="control-label col-3 col-sm-6 col-md-4 col-lg-12" asp-for="UserQuesting">Your name</label>
-                <input class="form-control col-sm-10 bg-light text-info" asp-for="UserQuesting" />
+                <input class="form-control col-sm-10 text-info" asp-for="UserQuesting" style="background-color:blanchedalmond;" />
             </div>
             <div class="row" style="background-color:lightsalmon">
                 
-                    <div col="1"><p> <<<  >>>  </p></div>
-                    <div col="3">
+                    
+                    <div class="col">
                         <h6>How was our service??    </h6>
                         <input asp-for="Quest1" type="radio" name="Quest1" value="3">
                         <label asp-for="Quest1" for="male">excellent</label><br>
@@ -32,8 +32,8 @@
                         <input asp-for="Quest1" type="radio" name="Quest1" value="1">
                         <label asp-for="Quest1" for="other">wrong </label>
                     </div>
-                    <div col="1"><p> <<<  >>>  </p></div>
-                    <div col="3">
+                    
+                    <div class="col">
                         <h6>How was our price??      </h6>
                         <input asp-for="Quest2" type="radio" name="Quest2" value="3">
                         <label asp-for="Quest2" for="male">Very cheap</label><br>
@@ -42,8 +42,8 @@
                         <input asp-for="Quest2" type="radio" name="Quest2" value="1">
                         <label asp-for="Quest2" for="other">Expensive</label>
                     </div>
-                    <div col="1"><p> <<<  >>>  </p></div>
-                    <div col="3">
+                
+                    <div class="col">
                         <h6>How fas it was??    </h6>
                         <input asp-for="Quest3" type="radio" name="Quest3" value="3">
                         <label asp-for="Quest3" for="male">Very fast</label><br>

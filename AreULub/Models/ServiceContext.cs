@@ -1,10 +1,18 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Channels;
+using System.Linq;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
+
 namespace AreULub.Models
 {
     public class ServiceContext : DbContext
     {
+        public ServiceContext()
+        {
+        }
+
         public ServiceContext(DbContextOptions<ServiceContext> options)
           : base(options)
         { }
