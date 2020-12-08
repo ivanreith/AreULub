@@ -7,6 +7,20 @@
     <h1>Services page</h1>
     <h4><a href="Tax">Calculate how much your taxes would be!</a> </h4>
 </div>
+<form asp-controller="Services" asp-action="ServicesIndex" method="post">
+
+    <div class="form-group">
+        <label name="searchString">Service Name ?</label>
+        <input name="searchString" type="text" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Search for..</button>
+    <a asp-controller="Services" asp-action="ServicesIndex"
+       class="btn btn-warning">Cancel</a>
+</form>
+
+
+
 <!--  Starting table stuff -->
 
 <a asp-controller="Services" asp-action="Add">Add Service</a>

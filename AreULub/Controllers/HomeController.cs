@@ -23,15 +23,30 @@ namespace AreULub.Controllers
         {
             context = ctx;
         }
-        public IActionResult ServicesIndex()
+        /* public IActionResult ServicesIndex()
+         {
+             var services = context.Services.Include(m => m.User)
+                 .OrderBy(m => m.ServiceName).ToList();
+             return View(services);
+         }
+      
+        public async Task<IActionResult> ServicesIndex(string searchString)
         {
-            var services = context.Services.Include(m => m.User)
-                .OrderBy(m => m.ServiceName).ToList();
-            return View(services);
+            /* Start of plain version
+            List<ServiceModel> service = Repository.service.ToList();
+
+            return View(service);
+           end of plain version 
+            var servicesFiltered = from s in context.Services select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                servicesFiltered = servicesFiltered.Where(s => s.ServiceName.Contains(searchString));
+                return View(await servicesFiltered.ToListAsync());
+            }
+            return View(await servicesFiltered.ToListAsync());
         }
-
-
-
+*/
 
         public IActionResult Index()
         {

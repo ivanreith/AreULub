@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AreULub.Models;
 using AreULub.Repositories;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace AreULub.Controllers
 {
@@ -20,13 +20,22 @@ namespace AreULub.Controllers
             context = c;
             Repository = s;
         }
-        [HttpGet]
-        public IActionResult ServicesIndex()
+        
+       public async Task<IActionResult> ServicesIndex(string searchString)
         {
-
+            /* Start of plain version
             List<ServiceModel> service = Repository.service.ToList();
 
             return View(service);
+           end of plain version  */
+            var servicesFiltered = from s in context.Services select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                servicesFiltered = servicesFiltered.Where(s => s.ServiceName.Contains(searchString));
+                return View(await servicesFiltered.ToListAsync());
+            }
+            return View(await servicesFiltered.ToListAsync());
         }
         [HttpGet]
         public IActionResult Add(ServiceModel service)
@@ -53,7 +62,7 @@ namespace AreULub.Controllers
             return View(story);
         }
 
-
+/*
         [HttpPost]
         public IActionResult ServicesIndex(ServiceModel model)
         {
@@ -71,7 +80,7 @@ namespace AreULub.Controllers
             }
         }
 
-
+        */
 
 
          /* public IActionResult ServicesIndex() // keep that one once I get data???? 
